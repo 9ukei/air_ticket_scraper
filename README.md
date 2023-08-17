@@ -1,6 +1,7 @@
 # Line Travel 機票比價爬蟲✈️ (Air ticket scraper)
 ## 前言(Introduction)
-當初會想要做機票比價爬蟲的起心動念是因為最近有想要出國玩，但也同時希望能省機票錢，剛好朋友傳了 Line Travel 快速比價找出便宜機票網頁，所以想說為何不來寫個機票爬蟲小程式！加上 Expedia、skyscanner 這種機票比價網要抓資料的話，可能會比較容易被擋或有雷要踩，所以就試著在 Line Travel 爬想要的資料。然後，把前三筆最便宜的航空公司機票組合/價格/兩人總價/購買連結用 Line Notify 回傳，這樣隨時可以把握最便宜的機票跟航空公司優惠組合啦！
+當初會想要做機票比價爬蟲的起心動念是因為最近有想要出國玩，但也同時希望能省機票錢，剛好朋友傳了 Line Travel 快速比價找出便宜機票網頁，所以想說為何不來寫個機票爬蟲小程式！
+加上 Expedia、Skyscanner 這種機票比價網要抓資料的話，可能會比較容易被擋或有雷要踩，所以就試著在 Line Travel 爬想要的便宜機票資料。接著，把機票資料存到 Google Sheet 雲端做備份；最後，把前三筆最便宜的航空公司機票組合/價格/兩人總價/購買連結用 Line Notify 回傳，這樣隨時可以把握最便宜的機票跟航空公司優惠組合啦！
 
 ## 功能(Function) 
 1. 從[Line Travel](https://travel.line.me/flights)網頁來爬取最新的機票資料 (Scraping Air Ticket Prices)
