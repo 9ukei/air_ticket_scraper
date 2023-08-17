@@ -14,3 +14,9 @@
 3. `pandas`套件是把資料轉成二維並且簡單視覺化用
 4. `pygsheets`套件是把資料存到`Google Sheet`，但需要先到 `Google Cloud` 串接`Google Sheet API`，詳細可參考這位大大的[教學](https://www.maxlist.xyz/2018/09/25/python_googlesheet_crud/)，裡面有詳細說明如何 用 Python 連結 Google Sheet API！:)
 5. `schedule` 套件是用來執行定時排程任務用的，有多餘的時間/金錢可以選擇部署到雲端上，但其實沒有部署到雲上，也可以把程式改寫成你想要的格式後，直接在本地端執行 `air_ticket_scraper.ipynb` 或是用 CMD 執行 `air_ticket_scraping_main.py` 檔案，只要不把程式關掉就可以一直執行排程功能的！
+
+## 參考資料(Reference)
+1. [Python 串接 GoogleSheet 新增、讀取、更新和刪除](https://www.maxlist.xyz/2018/09/25/python_googlesheet_crud/)
+2. [[爬蟲實戰] 如何抓取廉價航空的機票價格 – 以酷航為例?](https://www.youtube.com/watch?v=gCd3Fh9w3Do)
+3. [【Python 網頁爬蟲 #2】透過 pygsheets 操作 google sheet API，讓我們的資料能同步更新至雲端 google sheet 表格 (內含範例程式碼)](https://www.wongwonggoods.com/all-posts/python/python_web_crawler/python-pygsheets/)
+4. [Python 一個 line notify，通知今天氣溫。](https://molly1024.medium.com/python-%E4%B8%80%E5%80%8B-line-notify-%E9%80%9A%E7%9F%A5%E4%BB%8A%E5%A4%A9%E6%B0%A3%E6%BA%AB-a7e6fdb08543)
