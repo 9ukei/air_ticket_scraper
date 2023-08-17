@@ -13,4 +13,4 @@
 2. `selenium`、`BeautifulSoup4`和`lxml` 套件是用來爬取機票和解析資料用
 3. `pandas`套件是把資料轉成二維並且簡單視覺化用
 4. `pygsheets`套件是把資料存到`Google Sheet`，但需要先到 `Google Cloud` 串接`Google Sheet API`，詳細可參考這位大大的[教學](https://www.maxlist.xyz/2018/09/25/python_googlesheet_crud/)，裡面有詳細說明如何 用 Python 連結 Google Sheet API！:)
-5. `schedule` 套件是用來執行定時排程任務用的，有多餘的時間/金錢可以選擇部署到雲端上，但其實沒有部署到雲上，也可以直接在本地端執行 air_ticket_scraper.ipynb 檔案，不把程式關掉就可以固定執行排程的！
+5. `schedule` 套件是用來執行定時排程任務用的，有多餘的時間/金錢可以選擇部署到雲端上，但其實沒有部署到雲上，也可以把程式改寫成你想要的格式後，直接在本地端執行 `air_ticket_scraper.ipynb` 或是用 CMD 執行 `air_ticket_scraping_main.py` 檔案，只要不把程式關掉就可以一直執行排程功能的！
