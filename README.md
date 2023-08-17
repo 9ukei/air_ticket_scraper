@@ -1,7 +1,4 @@
 # Line Travel 機票比價爬蟲✈️ (Air ticket scraper)
-Developer: Angel Chiu / @9ukei<br>
-Program Name: air_ticket_scraping.ipynb<br>
-Date: 2023/08/18<br>
 ## 前言(Introduction)
 當初會想要做機票比價爬蟲的起心動念是因為最近有想要出國玩，但也同時希望能省機票錢，剛好朋友傳了 Line Travel 快速比價找出便宜機票網頁，所以想說為何不來寫個機票爬蟲小程式！加上 Expedia、skyscanner 這種機票比價網要抓資料的話，可能會比較容易被擋或有雷要踩，所以就試著在 Line Travel 爬想要的資料。然後，把前三筆最便宜的航空公司機票組合/價格/兩人總價/購買連結用 Line Notify 回傳，這樣隨時可以把握最便宜的機票跟航空公司優惠組合啦！
 
