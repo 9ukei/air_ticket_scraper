@@ -5,8 +5,8 @@
 ## 功能(Function) 
 1. 從[Line Travel](https://travel.line.me/flights)網頁來爬取最新的機票資料 (Scraping Air Ticket Prices)
 2. 把爬取的機票資料存成`CSV`檔到本地端 (Saving Air Ticket Price Data as CSV)	
-3. Uploading Air Ticket Price Data to Google Sheets	
-4. Regular Notifications via Line Notify: Top 3 Airlines with Lowest Prices
+3. 將航空公司機票價格資料上傳至Google Sheets (Uploading Air Ticket Price Data to Google Sheets)
+4. 透過Line Notify定期傳最低價格的前3家航空公司的通知 (Regular Notifications via Line Notify: Top 3 Airlines with Lowest Prices)
 
 ## 事前準備(Prerequisites)
 1. 需要安裝 `selenium`、`BeautifulSoup4`、`lxml`、`pandas`、`pygsheets` 和 `schedule` 套件
