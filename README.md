@@ -8,6 +8,7 @@
 2. 把爬取的機票資料存成`CSV`檔到本地端 (Saving Air Ticket Price Data as CSV)	
 3. 將航空公司機票價格資料上傳至Google Sheets (Uploading Air Ticket Price Data to Google Sheets)
 4. 透過 Line Notify 定期傳最低價格的前3家航空公司的通知 (Regular Notifications via Line Notify: Top 3 Airlines with Lowest Prices)
+5. 把抓下來的航空公司機會組合資料 URL 轉成 Short URL，解決 Line Notify 字數限制的問題 (Shorten URLs for Airline Data to Fix Line Notify Character Limit)
 
 ## 事前準備(Requirments)
 1. 需要 Python 3
@@ -18,8 +19,8 @@
 - `schedule` 套件是用來執行定時排程任務用的，有多餘的時間/金錢可以選擇部署到雲端上，但其實沒有部署到雲上，也可以把程式改寫成你想要的格式後，直接在本地端執行 `air_ticket_scraper.ipynb` 或是用 CMD 執行 `air_ticket_scraping_main.py` 檔案，只要不把程式關掉就可以一直執行排程功能的！
 
 ## 待優化項目(Functions to be optimized) 
-  1. 把抓下來的航空公司機會組合資料 URL 轉成 Short URL，解決 Line Notify 字數限制的問題。
-  2. 如果預算夠的話，把它部署到雲端上，就可以固定某個時間傳最新的機票優惠方案。
+  - [ ] 如果預算夠的話，把它部署到雲端上，就可以固定某個時間傳最新的機票優惠方案。
+  - [ ] 透過 Line Notify 機器人上輸入特定日期，根據輸入之特定日期，爬出相對應的機票優惠方案。
 
 ## 參考資料(Reference)
 1. [Python 串接 GoogleSheet 新增、讀取、更新和刪除](https://www.maxlist.xyz/2018/09/25/python_googlesheet_crud/)
