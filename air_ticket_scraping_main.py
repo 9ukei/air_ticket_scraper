@@ -38,14 +38,14 @@ soup = BeautifulSoup(html_source_code, 'html.parser')
 # print(soup.text)
 
 # Display the total number of tickets found
-record = soup.select_one('#__next > div.css-1cp3u8n.e1ugfpty0 > div:nth-child(2) > span')
+record = soup.select_one('#__next > div.css-1cp3u8n.e1a1bycy0 > div:nth-child(2) > span')
 print('搜尋的機票比價總筆數：',record.text)
 #
 
 time_loc_list = []
 
-for time_loc_info in soup.select('#__next > div.css-1cp3u8n.e1ugfpty0 > div:nth-child(2)'):
-    for tl in time_loc_info.select('.css-nkthol.ejxn77z1, .css-1qzlsgj.e1fe20ih2'):
+for time_loc_info in soup.select('#__next > div.css-1cp3u8n.e1a1bycy0 > div:nth-child(2)'):
+    for tl in time_loc_info.select('.css-nkthol.eooboqb1, .css-1qzlsgj.e4pxchi2'):
         time = tl.text
         time_loc_list.append(time)
 
@@ -59,7 +59,7 @@ df_time = pd.DataFrame(tuple_list, columns=["起飛時間(出發)","起飛地點
 result = []
 
 # Depart/Arrived time + location (aboard/arrived)
-for time_loc_info in soup.select('#__next > div.css-1cp3u8n.e1ugfpty0 > div:nth-child(2)'):
+for time_loc_info in soup.select('#__next > div.css-1cp3u8n.e1a1bycy0 > div:nth-child(2)'):
     for tl in time_loc_info.select('.css-1eowobi .css-j7qwjs'):
         time_loc = tl.text
         # print(time_loc)
@@ -78,9 +78,13 @@ for ticket_info in air_ticket_info:
     # ticket purchase url
     ticket_purchase_url = 'https://travel.line.me/' + ticket_info.find('a').get('href')
 
-    result.append((airline,ticket_site,int(ticket_per_price),int(total_price), ticket_purchase_url))
+    # Using TinyURL Short URL
+    import pyshorteners
 
-    #print(airline,ticket_site, ticket_per_price, total_price)
+    s = pyshorteners.Shortener()
+    ticket_purchase_short_url = s.tinyurl.short(ticket_purchase_url)
+
+    result.append((airline,ticket_site,int(ticket_per_price),int(total_price), ticket_purchase_short_url))
 
 df = pd.DataFrame(result, columns=["航空公司", "購買網站", "一人價格(TWD)", "兩人總價(TWD)", "買票去！"])
 
@@ -96,11 +100,10 @@ ticket_full_info.index +=1
 print(ticket_full_info.head(5))
 
 now = datetime.datetime.now()
-# If the month is not in the range of 10 to 12, then add a 0 after 1 to 9 months.
-if now.month <= 10:
-    date = str(now.year)+'0'+str(now.month)+str(now.day)
-else:
-    pass
+
+month_str = f"{now.month:02d}"
+day_str = f"{now.day:02d}"
+date = f"{now.year}{month_str}{day_str}"
 
 # Current time
 loc_dt = datetime.datetime.today() 
@@ -124,7 +127,7 @@ air_ticket_sheet_01 = sheet.worksheet_by_title("air ticket price comparison")
 
 # Update values in the worksheet
 # title_date = 'A1'
-# air_ticket_sheet_01.update_values(title_date, [['9/11 ~ 9/16 台灣大阪來回機票即時比價報表' + '\n' + loc_dt_format]])
+# air_ticket_sheet_01.update_values(title_date, [['台灣大阪來回機票即時比價報表' + '\n' + loc_dt_format]])
 attributes = 'A1'
 air_ticket_sheet_01.update_values(attributes, [["起飛時間(出發)","起飛地點(出發)","抵達時間(出發)","抵達地點(出發)", "起飛時間(回程)","起飛地點(回程)", "抵達時間(回程)","抵達地點(回程)","航空公司", "購買網站", "一人價格(TWD)", "兩人總價(TWD)", "買票去！"]])
 start_record = 'A2'
@@ -146,7 +149,7 @@ def send_notification():
     # Send LINE Notify notification   
     line_notify_url = "https://notify-api.line.me/api/notify"
 
-    msg = '\n9/11 ~ 9/16 台灣大阪來回機票\n即時比價報表\n\n'
+    msg = '\n台灣大阪來回機票\n即時比價報表\n\n'
     for row in top_three_rows:
         msg += f'''💎航空公司: {row["航空公司"]}\n💎一人價格(TWD): {row["一人價格(TWD)"]}元\n💎兩人總價(TWD): {row["兩人總價(TWD)"]}元\n✈️哪次不衝了，買票去！\n{row["買票去！"]}\n\n'''
     
